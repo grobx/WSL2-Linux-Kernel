@@ -13,7 +13,7 @@ fi
 
 
 # Calculate modules size (+ 256MiB for slack)
-modules_size=$(du -bs "$1" | awk '{print $1;}')
+modules_size=$(du -bs "$1/lib/modules/$2" | awk '{print $1;}')
 modules_size=$((modules_size + (256*(1<<20))))
 
 # Create our scratch directory
